@@ -106,7 +106,6 @@ class Movies extends Component {
         const { totalCount, data: movies } = this.getPagedData();
 
 
-        console.log(movies, 'movies')
 
         return (
             <div className="row">
