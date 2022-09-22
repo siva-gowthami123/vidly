@@ -2,7 +2,8 @@ import React from 'react';
 import Joi from 'joi-browser';
 import Form from "./common/form";
 import * as userService from "../services/userService";
-import auth from '../services/authService'; 
+import auth from '../services/authService';
+import { Link } from 'react-router-dom'; 
 
 
 class RegisterForm extends Form {
@@ -49,8 +50,14 @@ class RegisterForm extends Form {
           {this.renderInput('username', 'Username')}
           {this.renderInput('password', 'Password', 'password')} 
           {this.renderInput('name', 'Name')}
-          {this.renderButton('Register')}   
+          {this.renderButton('Submit')} 
         </form>
+        <Link to ="/login">
+
+        < button  className = " btn btn-primary btn-lg float-right  " style={{margin : "10px"}} >
+         Login
+        </button >
+        </Link> 
 
       </div>      
     );

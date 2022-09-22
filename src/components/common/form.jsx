@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Joi from "joi-browser";
 import Input from "./input";
 import Select from "./select";
-import { Link } from 'react-router-dom';
+
 
 class Form extends Component {
   state = { 
@@ -50,19 +50,17 @@ class Form extends Component {
     this.setState({data, errors});
   };
 
-  renderButton(Label){
+  renderButton(label){
     return (
       <div>
-        <Link to ="/register">
-        
-        < button  className = " btn btn-primary btn-lg float-right " style={{margin: "10px"}} >
-          Register
-        
+        < button disabled = {this.validate()} className = " btn btn-primary  " style={{margin: "10px"}} >
+          {label} 
         </button >
-        </Link>
-        < button disabled = {this.validate()} className = " btn btn-primary  " style={{margin: "10px"}} > Login </button >
+      
+      </div>
+      
 
-      </div>  
+        
     );  
   }
 
