@@ -5,7 +5,7 @@ const NavBar = ({user}) => {
     return ( 
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">
-        
+         NoteBook
         </Link>
         <button 
           className="navbar-toggler" 
@@ -34,10 +34,8 @@ const NavBar = ({user}) => {
             )}
             {user && (
               <React.Fragment>
-                <NavLink className="nav-item nav-link" to="/profile">
-                  {user.name}
-                </NavLink>
-                <NavLink className="nav-item nav-link" to="/movies">
+                
+                <NavLink className="nav-item nav-link " to="/movies">
                   Movies 
                 </NavLink>
                 <NavLink className="nav-item nav-link" to="/customers">
@@ -46,7 +44,10 @@ const NavBar = ({user}) => {
                 <NavLink className="nav-item nav-link" to="/rentals">
                   Rentals  
                 </NavLink>
-                <NavLink className="nav-item nav-link" to="/logout">
+                <NavLink className="nav-item nav-link " to="/profile" style={{color: "red"}}>
+                  {user.name}
+                </NavLink>
+                <NavLink className="nav-item nav-link" to="/logout" style={{color:"blue"}} >
                   Logout
                 </NavLink>
               </React.Fragment> 

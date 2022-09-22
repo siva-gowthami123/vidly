@@ -12,8 +12,15 @@ class LoginForm extends Form {
   };
 
   schema ={
-    username: Joi.string().required().label('Username'),
-    password: Joi.string().required().label('Password')
+    username: Joi.string()
+      .required()
+      .email()
+      .label("Username"),
+    password: Joi.string()
+      .required()
+      .min(5)
+      .label("Password"),
+    
   }
 
   doSubmit = async() => {
@@ -47,17 +54,18 @@ class LoginForm extends Form {
           {this.renderInput('username', 'Username')}
           {this.renderInput('password', 'Password', 'password')}
           {this.renderButton('Login')}
+          <Link to ="/register">
+
+          < button  className = " btn btn-primary btn-lg float-right  " style={{marginTop: "-4%"}} >
+            Register
+          </button >
+          </Link> 
           
           
           
           
         </form>
-        <Link to ="/register">
-
-        < button  className = " btn btn-primary btn-lg float-right  " style={{margin: "10px"}} >
-          Register
-        </button >
-        </Link> 
+        
 
       </div>
     );

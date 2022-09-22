@@ -23,6 +23,7 @@ class RegisterForm extends Form {
       .label("Password"),
     name: Joi.string()
       .required()
+      .min(5)
       .label("Name")    
   };
 
@@ -50,15 +51,16 @@ class RegisterForm extends Form {
           {this.renderInput('username', 'Username')}
           {this.renderInput('password', 'Password', 'password')} 
           {this.renderInput('name', 'Name')}
-          {this.renderButton('Submit')} 
+          {this.renderButton('Submit')}
+          <Link to ="/login">
+
+          < button  className = " btn btn-primary btn-lg float-right " style={{marginTop: "-4%"}} >
+            Login
+          </button >
+          </Link> 
+ 
         </form>
-        <Link to ="/login">
-
-        < button  className = " btn btn-primary btn-lg float-right  " style={{margin : "10px"}} >
-         Login
-        </button >
-        </Link> 
-
+       
       </div>      
     );
   }
