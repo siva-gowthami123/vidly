@@ -3,6 +3,7 @@ import {Redirect} from 'react-router-dom';
 import Form from './common/form';
 import Joi  from "joi-browser";
 import auth from '../services/authService';
+import { Link } from 'react-router-dom';
 
 class LoginForm extends Form {
   state ={
@@ -42,11 +43,21 @@ class LoginForm extends Form {
         <h1>Login</h1>
         
         <form onSubmit={this.handleSubmit}> 
+
           {this.renderInput('username', 'Username')}
           {this.renderInput('password', 'Password', 'password')}
-          {this.renderButton(' Login ', ' Register ')}
+          {this.renderButton('Login')}
           
-        </form> 
+          
+          
+          
+        </form>
+        <Link to ="/register">
+
+        < button  className = " btn btn-primary btn-lg float-right  " style={{margin: "10px"}} >
+          Register
+        </button >
+        </Link> 
 
       </div>
     );
