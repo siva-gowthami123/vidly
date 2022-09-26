@@ -8,6 +8,7 @@ import Customers from "./components/customers";
 import Rentals from "./components/rentals";
 import NotFound from "./components/notFound";
 import NavBar from './components/navBar';
+import Profile from './components/profile';
 
 import Logout from "./components/logout";
 import auth from './services/authService';
@@ -38,6 +39,7 @@ class App extends Component {
             <Route path ="/register" component = {RegisterForm}></Route>
             <Route path ="/login" component = {LoginForm}></Route>
             <Route path ="/logout" component = {Logout}></Route>
+            <Route path ="/profile" component = {Profile}></Route>
             <ProtectedRoute path ="/movies/:id"component = {MovieForm} /> 
             <ProtectedRoute path ="/movies"component = {Movies} /> 
             <Route 
@@ -48,6 +50,7 @@ class App extends Component {
             <Route path ="/rentals" component = {Rentals}></Route>
             <Route path ="/notFound" component = {NotFound}></Route>
             <Redirect from ="/" exact to ="/movies" />
+            
             <Redirect to="/notFound" />
 
 

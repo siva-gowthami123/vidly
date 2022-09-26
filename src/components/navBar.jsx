@@ -1,10 +1,14 @@
 import { reduceRight } from 'lodash';
 import React from 'react';
+
 import {Link, NavLink} from "react-router-dom";
+import notebook from "../../src/assets/image/notebook.jpg";
 const NavBar = ({user}) => {
     return ( 
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link className="navbar-brand" to="/">
+
+        <Link  className="navbar-brand" to="/" style={{marginLeft: 300}}>
+        <img src = {notebook} width="40px" height="30px"/>
          NoteBook
         </Link>
         <button 
@@ -35,21 +39,36 @@ const NavBar = ({user}) => {
             {user && (
               <React.Fragment>
                 
-                <NavLink className="nav-item nav-link " to="/movies">
+                <NavLink className="nav-item nav-link   " to="/movies" style={{marginLeft: 600}}>
                   Movies 
                 </NavLink>
                 <NavLink className="nav-item nav-link" to="/customers">
                   Customers    
                 </NavLink>
-                <NavLink className="nav-item nav-link" to="/rentals">
+                <NavLink className="nav-item nav-link" to="/rentals" >
                   Rentals  
                 </NavLink>
                 <NavLink className="nav-item nav-link " to="/profile" style={{color: "red"}}>
-                  {user.name}
+                  <button class="dropbtn" style={{color: "blue"}}>{user.name}
+                    <i class="fa fa-caret-down "></i>
+                  </button>
+                  <div class="Logout"></div>
+                  <NavLink className="nav-item nav-link" to="/logout" style={{color: "pink"}} >
+                   Logout  
+                  </NavLink>
+                  {/*<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   {user.name} 
+                  </button>
+                  <div class="dropdown-menu">
+                   <a class="dropdown-item" href="#">Logout</a>
+                   <NavLink className="nav-item nav-link" to="/logout" style={{color: "pink"}} >
+                   Logout  
                 </NavLink>
-                <NavLink className="nav-item nav-link" to="/logout" style={{color:"blue"}} >
-                  Logout
+                  </div>*/}  
+        
                 </NavLink>
+          
+                
               </React.Fragment> 
             )}
             

@@ -7,7 +7,8 @@ import Select from "./select";
 class Form extends Component {
   state = { 
     data: {},
-    errors: {}
+    errors: {},
+    
   };
 
   validate = () =>{
@@ -35,7 +36,7 @@ class Form extends Component {
     if(errors) return
     
     this.doSubmit();
-    
+     
   };
 
   handleChange = ({currentTarget: input}) =>{
@@ -49,11 +50,10 @@ class Form extends Component {
 
     this.setState({data, errors});
   };
-
   renderButton(label){
     return (
       <div>
-        < button disabled = {this.validate()} className = " btn btn-primary  " style={{margin: "10px"}} >
+        < button disabled ={this.validate()}  className = " btn btn-primary  " style={{margin: "10px"}} >
           {label} 
         </button >
       
