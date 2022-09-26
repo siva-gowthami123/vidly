@@ -55,7 +55,7 @@ const NavBar = ({user}) => {
                   <div class="Logout"></div>
                   <NavLink className="nav-item nav-link" to="/logout" style={{color: "pink"}} >
                    Logout  
-                  </NavLink>
+                </NavLink> 
                   {/*<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                    {user.name} 
                   </button>
