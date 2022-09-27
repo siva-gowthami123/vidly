@@ -39,7 +39,7 @@ class App extends Component {
             <Route path ="/register" component = {RegisterForm}></Route>
             <Route path ="/login" component = {LoginForm}></Route>
             <Route path ="/logout" component = {Logout}></Route>
-            <Route path ="/profile" component = {Profile}></Route>
+            
             <ProtectedRoute path ="/movies/:id"component = {MovieForm} /> 
             <ProtectedRoute path ="/movies"component = {Movies} /> 
             <Route 
@@ -51,7 +51,7 @@ class App extends Component {
             <Route path ="/notFound" component = {NotFound}></Route>
             <Redirect from ="/" exact to ="/movies" />
             
-            <Redirect to="/notFound" />
+            <Redirect to="" />
 
 
           </Switch>

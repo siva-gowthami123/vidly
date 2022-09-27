@@ -31,6 +31,7 @@ class RegisterForm extends Form {
     try{
       const response = await userService.register(this.state.data);
       auth.loginWithJwt( response.headers["x-auth-token"]);
+      
       window.location="/";
 
     }catch (ex) {
@@ -54,9 +55,13 @@ class RegisterForm extends Form {
           {this.renderButton('Submit')}
           <Link to ="/login">
 
-          < button  className = " btn btn-primary btn-lg float-right " style={{marginTop: "-4%"}} >
+          {/*< button  className = " btn btn-primary btn-lg float-right " style={{marginTop: "-4%"}} >
             Login
-          </button >
+            </button >*/}
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  
+              <button class="btn btn-primary" type="button" style={{marginTop: "-3%"}}>Login</button>
+            </div>
           </Link> 
  
         </form>

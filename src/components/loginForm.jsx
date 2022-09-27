@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 class LoginForm extends Form {
   state ={
     data:{username:"", password:""},
-    errors: {}
+    errors: {},
+    
   };
 
   schema ={
@@ -27,7 +28,10 @@ class LoginForm extends Form {
   doSubmit = async() => {
     try {
       const {data} = this.state;
+
       await auth.login(data.username, data.password);
+
+
       const {state} = this.props.location;
       
       window.location = state ? state.from.pathname: "/";
@@ -57,9 +61,13 @@ class LoginForm extends Form {
           {this.renderButton('Login')}
           <Link to ="/register">
 
-          < button  className = " btn btn-primary btn-lg float-right  " style={{marginTop: "-4%"}} >
+          {/*< button  className = " btn btn-primary btn-lg float-right " style={{marginTop: "-4%"}} >
             Register
-          </button >
+            </button >*/}
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  
+              <button class="btn btn-primary" type="button" style={{marginTop: "-3%"}}>Register</button>
+            </div>
           </Link> 
           
           

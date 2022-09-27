@@ -49,22 +49,24 @@ const NavBar = ({user}) => {
                   Rentals  
                 </NavLink>
                 <NavLink className="nav-item nav-link " to="/profile" style={{color: "red"}}>
-                  <button class="dropbtn" style={{color: "blue"}}>{user.name}
+                  
+                 {/*<button class="dropbtn" style={{color: "blue"}}>{user.name}
                     <i class="fa fa-caret-down "></i>
                   </button>
                   <div class="Logout"></div>
                   <NavLink className="nav-item nav-link" to="/logout" style={{color: "pink"}} >
                    Logout  
-                </NavLink> 
-                  {/*<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  </NavLink>*/} 
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                    {user.name} 
                   </button>
-                  <div class="dropdown-menu">
-                   <a class="dropdown-item" href="#">Logout</a>
+                  <div class="dropdown-menu">  
+                   <a class="dropdown-item" href="#"></a>
                    <NavLink className="nav-item nav-link" to="/logout" style={{color: "pink"}} >
-                   Logout  
-                </NavLink>
-                  </div>*/}  
+                     Logout  
+                   </NavLink>
+                  </div> 
+                  
         
                 </NavLink>
           
