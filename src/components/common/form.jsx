@@ -53,7 +53,7 @@ class Form extends Component {
   renderButton(label){
     return (
       <div>
-        < button disabled ={this.validate() && this.state.bkd}  className = " btn btn-primary  " style={{margin: "10px"}}  >
+        < button disabled ={this.validate() || this.state.bkd}  className = " btn btn-primary  " style={{margin: "10px"}}  >
           {label} 
         </button >
       

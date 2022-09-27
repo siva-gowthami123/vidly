@@ -29,6 +29,7 @@ class LoginForm extends Form {
     try {
       const {data} = this.state;
 
+       this.setState({bkd:true})
       await auth.login(data.username, data.password);
 
 
